@@ -1,0 +1,71 @@
+Type conversion-Java Script dasturlash turida saqlanayotgan ma’lumot turini bir ko’rinishdan 2-ko’rinishga o’tqazish.
+
+Type conversion 2 turda amalga oshiriladi. 
+1.Implict conversion-avtomatik ya’ni faqat number va string holatda ishlaydi.
+2.Explicit conversion-qo’l bola 
+Number-Primitiv o’rab turuvchi obyektidan foydalanib, berilgan ma’lumot turini son ko’rinishga o’tqazish imkoniyati mavjud. Agar berilgan ma’lumotni son ko’rinishida o’tqazishni imkoni bo’lmasa, NaN maxsus qiymati yuzaga keladi. 
+String-Primitiv o’rab turuvchi obyektidan foydalanib, berilgan ma’lumot turini string ko’rinishiga o’tqazish mumkin.
+Type coercion-Java Script dasturlash tilida operatorlar turli qiymatlar ustida ish olib borayotganda, ulardan birining avtomatik ravishda boshqa turga o’tishi. Boshqacha qilib aytganda ma’lumot turini avtomatik ravishda 1 ko’rinishdan 2-ko’rinishga o’tishi. 
+Java Script dasturlash tilida berilgan qiymatni Boolen ko’rinishida o’tqazilganda, ular Truthy va Falsy ko’rinishga keladi. Truthy faqat rost qiymatlarni Folse esa folse qiymatlarni eknranga chiqaradi.
+Falsy ko’rinishga keladigan qiymatlar:
+1.false                  5.undifaned
+2.0                       6.null
+3.0n(BigInt)        7.NaN
+4.””
+Funksiya-Java Script dasturlash tilining asoslaridan biri bo’lib uning yordamida ma’lum bir vazifani bajarish imkoniyati mavjud. Funksiya boshqa bir kod qismda chaqirilganda ishga tushadi. Funksiya yordamida kodni qayta ishlatish imkoniyati mavjud. Ya’ni bir marta e’lon qilib bir nechta joyga ishlatish mumkin. 
+function meningFunksiyam (son1, son2){
+return son1+son2;
+}
+console.log(meningFunksiyam (10, 20));
+)
+Funksiyalar 3 xil yo’l bilan e’lon qilinadi. 
+•	Function Declaration (oddiy e’lon qilish)-function kalit so’zi yordamida e’lon qilinadi va berilgan 
+function salomBer() {
+  console.log("Salom, dunyo!");
+}
+salomBer(); // chaqirish
+Afzalligi: bu usulda yozilgan funksiyani e’lonidan oldin ham chaqirish mumkin.
+•	Function Expression (o‘zgaruvchiga biriktirish)-function kalit so’zi yordamida e’lon qilinadi va ma’lum bir o’zgaruvchiga tenglab quyish irqali e’lon qilinadi. 
+const salomBer = function() {
+  console.log("Salom, dunyo!");
+};
+salomBer();
+Afzalligi: funksiya o‘zgaruvchi sifatida ishlaydi.
+Lekin bu usulda faqat e’lonidan keyin chaqirish mumkin.
+•	Arrow Function (zamonaviy usul)-function expression yozishning qisqaroq ko’rinishi. Bunday turdagi funksiyalarni yozishni turli xil yo’llari mavjud. 
+const salomBer = () => {
+  console.log("Salom, dunyo!");
+};
+salomBer();
+Afzalligi: qisqa va o‘qilishi oson.
+Lekin this so‘zini ishlatishda ehtiyot bo‘lish kerak (oddiy function bilan farqi bor).
+Array-bir vaqtning o’zida bir nechta qiymatlarni o’zida saqlashi mumkin bo’lgan obyekt.
+Array yaratish 2xil usulda amalga oshiriladi. 
+1.Array literal ko’rinishda-array yaratishning eng oson usuli array literal hisoblanib, to’rtburchak qavslar ([]) dan foydalanib yaratiladi. 
+2.New kalit so’zi yordamida-new kalit so’zi yordamida ham arraylarni yaratish imkoniyati mavjud. 
+Number holatida “true”-1 qiymat qaytaradi.
+Number holatida “folse”-0 qiymat qaytaradi. 
+Underfanide 0 ga ham 1 ga ham teng emas. 
+Stringdan stringni hech qachon ayirib bulmaydi. 
+Ma’lumotlarni number ko’rinishiga o’tqazish uchun quyidagilarni amalaga oshirish mumkin.
+1.	parseInt-(122.01)-natijada 122 sonini chiqaradi ya’ni faqat asos qisminigina qabul qiladi. 
+2.	parseFloat-(122.01)-natijada 122.01 ni uzi chiqadi ya’ni nuqtadan keying barcha sonlarni ham qabul qilsin.
+3.	Number  obyekti yordamida yoki +result qilish yordamida amalga oshirish mumkin. 
+Ma’lumotlarni string ko’rinishiga o’tqazish uchun quyidagilarni amalaga oshirish mumkin.
+1.	String obyekti yordamida yoki+ result qilish yordamida amalga oshirish imkoniyati mavjud. 
+2.	String rangi node js da oq buladi, aks holda sariq bo’ladi. 
+Loop bilan tanishuv
+Loopda 3 ta asosiy sharti bor. Unga o’zgaruvchi, shart va infinity kiradi. Shart loop qachon tuxtashi uchun berib o’tiladi. U ishlashi uchun soni oshib borishi kerak (i++ yok i--); Loop shartimiz folse bulguncha ishlaydi. 
+for(let i =1; i<10; i++){
+console.log("Olim")
+}
+Teskari loop-kattadan kichikka qarab o’zgaradi. 
+for(let i =10; i>0; i--){
+console.log("Olim")
+}
+while sikli
+•	Avval shart tekshiriladi, keyin kod bajariladi.
+•	Agar shart boshlang‘ichdan noto‘g‘ri (false) bo‘lsa, sikl umuman ishlamaydi.
+do...while sikli
+•	Avval kod bajariladi, keyin shart tekshiriladi.
+•	Shuning uchun kod kamida 1 marta ishlaydi, hatto shart noto‘g‘ri bo‘lsa ham.
